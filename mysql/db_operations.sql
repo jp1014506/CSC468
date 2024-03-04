@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS CSC468;
+USE CSC468;
+
+CREATE TABLE IF NOT EXISTS cattle (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Breed VARCHAR(255),
+    Origin VARCHAR(255),
+    Purpose VARCHAR(255),
+    Number VARCHAR(255)
+);
+
+LOAD DATA INFILE '/var/lib/mysql-files/cattle.csv'
+INTO TABLE cattle
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(Breed, Origin, Purpose, Number);
