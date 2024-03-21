@@ -1,0 +1,24 @@
+apiVersion: app/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+  roles: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: app
+    template:
+      metadata:
+        labels:
+          role: app
+        spec:
+          containers:
+          - name: app
+            image: ????
+            resources:
+              requests: 
+                cpu: 10m
+            ports:
+            - containerPort: 3306
