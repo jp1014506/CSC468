@@ -8,5 +8,5 @@ spec:
   ports:
     - protocol: TCP
       port: 3306
-      nodePort: 32010
+      nodePort: 32012
   type: NodePort
